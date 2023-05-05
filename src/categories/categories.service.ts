@@ -16,7 +16,7 @@ export class CategoriesService {
     return await this.prisma.category.findMany();
   }
 
-  findOne(id: string) {
-    return this.prisma.category.findUnique({ where: { id } });
+  async findOne(id: string) {
+    return await this.prisma.category.findUnique({ where: { id } });
   }
 }

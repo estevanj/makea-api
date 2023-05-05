@@ -17,3 +17,23 @@ model Category {
   createdAt DateTime? @default(now()) @ignore
   updatedAt DateTime? @updatedAt @ignore
 }
+
+model Furniture {
+  id    String                           @id @default(auto()) @map("_id") @db.ObjectId
+  categoryId  String
+  name  String
+  description String
+  photo_url String
+  photosArray String[]
+  pieces String[]
+  createdAt DateTime? @default(now()) @ignore
+  updatedAt DateTime? @updatedAt @ignore
+}
+
+model Piece {
+  id    String                           @id @default(auto()) @map("_id") @db.ObjectId
+  name  String
+  photo_url String
+  createdAt DateTime? @default(now()) @ignore
+  updatedAt DateTime? @updatedAt @ignore
+}
