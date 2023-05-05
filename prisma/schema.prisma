@@ -14,5 +14,6 @@ model Category {
   id    String                           @id @default(auto()) @map("_id") @db.ObjectId
   name  String
   photo_url String
-  regex Unsupported("RegularExpression")
+  createdAt DateTime? @default(now()) @ignore
+  updatedAt DateTime? @updatedAt @ignore
 }
